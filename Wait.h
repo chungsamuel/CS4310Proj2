@@ -14,4 +14,4 @@ Wait(int argc, char **argv);
 virtual Result exec();
 };
 
-#endif 
+#endif /* __BIN_SLEEP_SLEEP_H */
