@@ -1,7 +1,7 @@
-# CS4310Proj2
+# CS4310Proj3
 
 Group Members: Jack Morris, Samuel Chung, Jeremy Luu
 
-Demo Link: https://youtu.be/o05sKcNnC88
+Demo Link: 
 
-Project 02 Wait For It... Purpose Understand the structure of FreeNOS (API, system calls, traps). "Git" ready. Get debugging skills.
+Project 03 Prioritize it... Purpose: Understand the process scheduling of FreeNOS. Get hands-on with process priority scheduling implementation.
