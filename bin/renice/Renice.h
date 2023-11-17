@@ -25,9 +25,6 @@
  * @{
  */
 
-/**
- * Stop executing for some time.
- */
 class Renice : public POSIXApplication
 {
   public:
