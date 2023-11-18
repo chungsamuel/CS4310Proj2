@@ -120,6 +120,8 @@ class ProcessClient
      *         or ANY if none found.
      */
     ProcessID findProcess(const String program) const;
+    
+    void setPriority(const ProcessID id, int priority);
 
   private:
 

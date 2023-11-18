@@ -177,6 +177,10 @@ API::Result ProcessCtlHandler(const ProcessID procID,
         if (procs->sleep((const Timer::Info *)addr) == ProcessManager::Success)
             procs->schedule();
         break;
+        
+    case setPriority:
+    	return (procs->setPriority(procID, addr) == ProcessManager::Success) ? (API::Success) : (API::InvalidArgument);
+    	
     }
 
     return API::Success;
