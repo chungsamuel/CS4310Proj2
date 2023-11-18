@@ -45,7 +45,7 @@ ProcessManager::~ProcessManager()
 ProcessManager::Result ProcessManager::setPriority(const ProcessID id, const int priority)
 {
 	Process* p = get(id);
-	if (p == zero)
+	if (p == ZERO)
 	{
 		return InvalidArgument;
 	}
@@ -54,7 +54,7 @@ ProcessManager::Result ProcessManager::setPriority(const ProcessID id, const int
 	Process::Result res = p->setPriority(priority);
 	enqueueProcess(p, false);
 	
-	if (res != success)
+	if (res != Success)
 	{
 		return InvalidArgument;
 	}

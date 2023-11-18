@@ -256,7 +256,10 @@ class Process
     void setParent(ProcessID id);
 
   protected:
-
+  
+    /** Process priority with default value of 3, a range of 1 to 5 */
+    int m_priority;
+    
     /** Process Identifier */
     const ProcessID m_id;
 
