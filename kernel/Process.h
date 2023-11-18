@@ -148,8 +148,22 @@ class Process
      * @return True if equal, false otherwise.
      */
     bool operator == (Process *proc);
+    
+    /**
+    * Returns process priority
+    *
+    * @return Process priority
+    */
+    int getPriority() const;
 
   protected:
+  
+    /**
+    * Sets the priority level of the specific process
+    *
+    * @param priority The priority level within a range of 1 to 5 to set the process to.
+    */
+    Result setPriority(int priority);
 
     /**
      * Initialize the Process.

@@ -26,6 +26,7 @@
 Process::Process(ProcessID id, Address entry, bool privileged, const MemoryMap &map)
     : m_id(id), m_map(map), m_shares(id)
 {
+    m_priority      = 3;
     m_state         = Stopped;
     m_parent        = 0;
     m_waitId        = 0;
@@ -55,6 +56,12 @@ Process::~Process()
         m_memoryContext->releaseSection(m_map.range(MemoryMap::UserShare), true);
         delete m_memoryContext;
     }
+    
+}
+
+int Process::getPriority() const
+{
+	return m_priority;
 }
 
 ProcessID Process::getID() const
@@ -119,6 +126,19 @@ Process::Result Process::wait(ProcessID id)
     m_waitId = id;
 
     return Success;
+}
+
+Process::Result Process::setPriority(int priority)
+{
+	if (priority >= 1 && priority <= 5)
+	{
+		m_priority = priority;
+		return Success;
+	}
+	else
+	{
+		return InvalidArgument;
+	}
 }
 
 Process::Result Process::join(const uint result)
