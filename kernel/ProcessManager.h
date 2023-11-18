@@ -70,7 +70,6 @@ class ProcessManager
     virtual ~ProcessManager();
 
     /**
-    
      * Set the priority of specific processes.
      *
      * @param id The id of the specific process

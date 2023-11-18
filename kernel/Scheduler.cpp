@@ -28,7 +28,7 @@ Size Scheduler::count() const
 {
     int count = 0;
     
-    for (int i; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
     	count += m_multilevel_queue[i].count();
     }
@@ -78,13 +78,13 @@ Scheduler::Result Scheduler::dequeue(Process *proc, bool ignoreState)
 
 Process * Scheduler::select()
 {
-    for (int i; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         if (m_multilevel_queue[i].isEmpty())
         {
         	continue;
         }
-        Process *p = m_multilevel_queue[i].pop();
+        Process* p = m_multilevel_queue[i].pop();
         m_multilevel_queue[i].push(p);
 
         return p;
