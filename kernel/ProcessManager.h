@@ -70,6 +70,18 @@ class ProcessManager
     virtual ~ProcessManager();
 
     /**
+    
+     * Set the priority of specific processes.
+     *
+     * @param id The id of the specific process
+     * @param priority Set the priority of the specific process to this value
+     *
+     * @return Returns the process pointer on success or returns a zero on fail
+     */
+     
+     Result setPriority(const ProcessID id, const int priority);
+     
+     /**
      * Create a new Process.
      *
      * @param entry Process executable entry point
